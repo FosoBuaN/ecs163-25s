@@ -1,0 +1,82 @@
+<!doctype html>
+<html style="width:100%;height:100%;">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description"
+		content="Dashboard containing three static diagrams displaying Data Science Salaries from the year 2020 to 2023.">
+	<title>Data Science Salaries Dashboard</title>
+	<style>
+		/* Utilize full screen */
+		html {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Dashboard partition: top half for the two simple visualizations
+		and bottom half for the chunky looking Sankey diagram */
+		main {
+			display: flex; /* Achieve even top and bottom split effect with column */
+			flex-direction: column;
+			width:100%;
+			height: 100%; /* width/height to take up full screen */
+			padding: 0.5em; /* adds white space between main screen edge and internal */
+			gap:0.25em; /* adds vertical gap between two child containers */
+			box-sizing: border-box; /* accounts padding and margin as part of total width/height */
+		}
+
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height:100%;
+			padding: 0.25em;
+			gap: 0.25em;
+			outline: 1px solid black;
+			box-sizing: border-box;
+		}
+
+		.sankey-container {
+			width:100%;
+			height:100%;
+			outline: 1px solid black;
+		}
+
+		.box-and-whisker-container{
+			flex: 1;
+			/* outline: 1px solid black; */
+		}
+
+		.line-chart-container{
+			flex: 1;
+			/* outline: 1px solid black; */
+		}
+	</style>
+</head>
+
+<body style="width:100%;height:100%;margin: 0;">
+	<!-- Main dashboard: will contain all three diagrams -->
+	<main width="100%" height="100%">
+		<div class="flex-container">
+			<div class="box-and-whisker-container">
+				<svg id="box-svg" width="100%" height="100%"></svg>
+			</div>
+			<div class="line-chart-container">
+				<svg id="line-svg" width="100%" height="100%"></svg>
+			</div>
+		</div>
+		<div class="sankey-container">
+			<svg id="sankey-svg" width="100%" height="100%"></svg>
+		</div>
+	</main>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<!-- for my sankey graph cause ... well... easier -->
+	<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+	<script src="main.js"></script>
+	<script>
+
+	</script>
+</body>
+
+</html>
